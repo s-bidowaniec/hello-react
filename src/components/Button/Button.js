@@ -2,11 +2,11 @@ import style from './Button.module.scss';
 import PropTypes from 'prop-types';
 
 const Button = (props) => {
-  return <button className={style.button}>{props.text}</button>;
+  return <button className={style.button}>{props.children}</button>;
 };
 
 Button.propTypes = {
-  text: PropTypes.string
+  children: PropTypes.string
 };
 
 export default Button;
