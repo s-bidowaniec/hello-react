@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import styles from './CardForm.module.scss';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 
@@ -13,7 +14,7 @@ const CardForm = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.cardForm}>
       <TextInput value={cardTitle} onChange={(e) => setCardTitle(e.target.value)} />
       <Button>Add</Button>
     </form>
