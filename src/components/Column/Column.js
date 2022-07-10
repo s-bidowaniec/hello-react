@@ -14,10 +14,10 @@ const Column = (props) => {
       </h2>
       <ul className={styles.cards}>
         {cards.map((card) => (
-          <Card key={card.key} title={card.title} />
+          <Card key={card.id} title={card.title} />
         ))}
       </ul>
-      <CardForm columnId={props.id} action={props.action} />
+      <CardForm columnId={props.id} />
     </article>
   );
 };
@@ -25,9 +25,7 @@ const Column = (props) => {
 Column.propTypes = {
   id: PropTypes.number,
   title: PropTypes.string,
-  icon: PropTypes.string,
-  cards: PropTypes.array,
-  action: PropTypes.func
+  icon: PropTypes.string
 };
 
 export default Column;

@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import styles from './CardForm.module.scss';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 
 const CardForm = (props) => {
+  const dispatch = useDispatch();
   const [cardTitle, setCardTitle] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.action({ title: cardTitle }, props.columnId);
+    dispatch({
+      type: 'ADD_CARD',
+      payload: { title: cardTitle, columnId: props.columnId }
+    });
     setCardTitle('');
   };
 
@@ -22,7 +27,6 @@ const CardForm = (props) => {
 };
 
 CardForm.propTypes = {
-  action: PropTypes.func,
   columnId: PropTypes.number
 };
 
