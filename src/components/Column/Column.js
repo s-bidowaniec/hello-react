@@ -24,7 +24,7 @@ const Column = (props) => {
 };
 
 Column.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   title: PropTypes.string,
   icon: PropTypes.string
 };

@@ -24,7 +24,7 @@ const CardForm = (props) => {
 };
 
 CardForm.propTypes = {
-  columnId: PropTypes.number
+  columnId: PropTypes.string
 };
 
 export default CardForm;
