@@ -6,7 +6,7 @@ const Container = (props) => {
 };
 
 Container.propTypes = {
-  children: PropTypes.array
+  children: PropTypes.object
 };
 
 export default Container;
