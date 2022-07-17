@@ -5,6 +5,7 @@ import Favorite from './components/Favorite/Favorite';
 import NotFound from './components/NotFound/NotFound';
 import Container from './components/Container/Container';
 import NavBar from './components/NavBar/NavBar';
+import List from './components/List/List';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/favorite" element={<Favorite />} />
+          <Route path="/list/:listId" element={<List />} />
           <Route path="/*" exact={true} element={<NotFound />} />
         </Routes>
       </Container>

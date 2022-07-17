@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styles from './ColumnForm.module.scss';
 import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
 import { addColumn } from '../../redux/store';
-const ColumnForm = () => {
+
+const ColumnForm = (props) => {
   const dispatch = useDispatch();
   const [title, setColumnTitle] = useState('');
   const [icon, setColumnIcon] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addColumn({ title, icon }));
+    dispatch(addColumn({ title, icon, listId: props.listId }));
     setColumnTitle('');
     setColumnIcon('');
   };
@@ -28,6 +29,8 @@ const ColumnForm = () => {
   );
 };
 
-//ColumnForm.propTypes = {};
+ColumnForm.propTypes = {
+  listId: PropTypes.string
+};
 
 export default ColumnForm;
