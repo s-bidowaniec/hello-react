@@ -1,0 +1,39 @@
+@use "sass:math";
+@import '../../styles/settings.scss';
+nav {
+  background-color: darken($color-dark, 3%);
+}
+.flexWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon::before {
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
+  line-height: $nav-height;
+}
+.navList {
+  margin: 0;
+  padding: 0;
+  & :not(:last-child){
+    margin-right: 10px;
+  }
+}
+.navElement {
+  display: inline-block;
+  & a{
+    line-height: $nav-height;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+}
+.navElement {
+  & :last-child{
+    margin-right: 0;
+  }
+}
