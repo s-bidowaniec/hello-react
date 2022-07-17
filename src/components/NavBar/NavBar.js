@@ -1,23 +1,40 @@
-//import styles from './NavBar.module.scss';
-
-import styles from '../NavBar/NavBar.module.scss';
+import styles from './NavBar.module.scss';
+import { NavLink, Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <nav>
       <div className={styles.flexWrapper}>
-        <a href={'/'}>
+        <Link to="/">
           <span className={styles.icon + ' fa fa-tasks'} />
-        </a>
+        </Link>
         <ul className={styles.navList}>
           <li className={styles.navElement}>
-            <a href={'./'}>Home</a>
+            <NavLink
+              className={({ isActive }) =>
+                styles.link + ' ' + (isActive ? styles.linkActive : styles.linkInactive)
+              }
+              to="/">
+              Home
+            </NavLink>
           </li>
           <li className={styles.navElement}>
-            <a href={'./favorite'}>Favorite</a>
+            <NavLink
+              className={({ isActive }) =>
+                styles.link + ' ' + (isActive ? styles.linkActive : styles.linkInactive)
+              }
+              to="/favorite">
+              Favorite
+            </NavLink>
           </li>
           <li className={styles.navElement}>
-            <a href={'./about'}>About</a>
+            <NavLink
+              className={({ isActive }) =>
+                styles.link + ' ' + (isActive ? styles.linkActive : styles.linkInactive)
+              }
+              to="/about">
+              About
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -25,3 +42,5 @@ const NavBar = () => {
   );
 };
 export default NavBar;
+
+//<NavLink className={({ isActive }) => isActive ? styles.linkActive : undefined} to="/">Home</NavLink>
