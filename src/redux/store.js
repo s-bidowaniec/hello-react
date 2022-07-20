@@ -22,7 +22,6 @@ export const searchCard = (payload) => ({ type: 'SEARCH_CARD', payload });
 export const addToFavorite = (payload) => ({ type: 'ADD_TO_FAVORITE', payload });
 
 const reducer = (state, action) => {
-  // const newCards = [];
   switch (action.type) {
     case 'ADD_COLUMN':
       action.payload.id = shortid();
@@ -36,14 +35,6 @@ const reducer = (state, action) => {
       action.payload.id = shortid();
       return { ...state, lists: [...state.lists, action.payload] };
     case 'ADD_TO_FAVORITE':
-      /*console.log(action.payload.id);
-      for (let card of state.cards) {
-        if (card.id === action.payload.id) {
-          card.isFavorite = !card.isFavorite;
-        }
-        newCards.push(card);
-      }
-      return { ...state, cards: [...newCards] };*/
       return {
         ...state,
         cards: state.cards.map((card) =>

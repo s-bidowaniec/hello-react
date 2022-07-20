@@ -42,5 +42,3 @@ const NavBar = () => {
   );
 };
 export default NavBar;
-
-//<NavLink className={({ isActive }) => isActive ? styles.linkActive : undefined} to="/">Home</NavLink>
