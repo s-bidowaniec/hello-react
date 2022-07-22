@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './CardForm.module.scss';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
-import { addCard } from '../../redux/store';
+import { addCard } from '../../redux/cardsRedux';
 const CardForm = (props) => {
   const dispatch = useDispatch();
   const [cardTitle, setCardTitle] = useState('');

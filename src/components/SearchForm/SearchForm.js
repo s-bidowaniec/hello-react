@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import styles from './SearchForm.module.scss';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
-import { getSearchString, searchCard } from '../../redux/store';
-
+import { getSearchString } from '../../redux/searchStringRedux';
+import { searchCard } from '../../redux/searchStringRedux';
 const SearchForm = () => {
   const dispatch = useDispatch();
   const [searchText, setSearchText] = useState(useSelector(getSearchString));
