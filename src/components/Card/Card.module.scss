@@ -11,7 +11,14 @@
   justify-content: space-between;
   font-weight: bold;
 }
-
+.icon{
+  margin: 0 5px;
+  cursor: pointer;
+  transition: $transition;
+  &:hover{
+    color: $color-warning;
+  }
+}
 .isFavorite {
   color: orange;
 }
